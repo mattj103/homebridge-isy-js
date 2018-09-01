@@ -32,7 +32,7 @@
     "restler": "",
     "faye-websocket": "",
     "xmldoc": "",
-    "isy-js": "git+https://github.com/mattj103/isy-js"
+    "isy-js": "git+https://github.com/mattj103/isy-js.git"
   },
   "author": "rodtoll",
   "license": "MIT",

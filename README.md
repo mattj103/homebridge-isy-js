@@ -1,8 +1,12 @@
-# homebridge-isy-js [![Build Status](https://api.travis-ci.org/rodtoll/homebridge-isy-js.svg?branch=master)](https://api.travis-ci.org/rodtoll/isy-js.svg?branch=master)
+# homebridge-isy-js 
+
+[![Build Status](https://api.travis-ci.org/rodtoll/homebridge-isy-js.svg?branch=master)](https://api.travis-ci.org/rodtoll/isy-js.svg?branch=master)
+
+(C) Rod Toll 2015-2017, Licensed under the MIT-LICENSE. Additional development work by pradeepmouli, 2018-
+
 ISY-994 REST / WebSockets based HomeBridge platform. 
 
 NOTE: Homebridge-isy-js now includes support for garage door openers. Make sure you ensure a garage door is clear before closing it.
-
 
 Supports the following Insteon devices: Lights (dimmable and non-dimmable), Fans, Outlets, Door/Window Sensors, MorningLinc locks, Inline Lincs, Motion Sensors and I/O Lincs.
 Also supports ZWave based locks. If elkEnabled is set to true then this will also expose your Elk Alarm Panel and all of your Elk Sensors. 
@@ -10,8 +14,6 @@ Also supports ZWave based locks. If elkEnabled is set to true then this will als
 Turns out that HomeBridge platforms can only return a maximum of 100 devices. So if you end up exposing more then 100 devices through HomeBridge the HomeKit
 software will fail adding the HomeBridge to your HomeKit network. To address this issue this platform provides an option to screen out devices based on 
 criteria specified in the config. 
-
-NEEDED: Someone with a Venstat Insteon thermostat to add support for it. I will accept submissions for implementations if someone is interested.
 
 # Requirements
 
@@ -98,6 +100,12 @@ Examples:
 
  # History
 
+ * 0.2.0 - Development resumed.
+    - Support for v5.0.12+
+    - Support for Insteon Thermostat/Insteon Thermostat Adapter added
+    - Fixed characteristic update logic to capture externally initiated changes w/o triggering update back to isy.
+    - Requires new version of [isy-js](https://github.com/pradeepmouli/isy-js.git) 
+ * 0.1.9 - (Rodtoll) Active development ended. 
  * 0.1.8 - Fixed crash in tests (race condition) and fixed crash in garage door device.
  * 0.1.7 - Fixed crash when there is no ignoreDevices entry. Also added new renameDevices section to enable device renaming. Added note to highlight ISY 99 is no longer supported, you needed an ISY 994 or newer. Added checks to ensure device list doesn't exceed 100 devices. Simplified ignore syntax so blank elements no longer needed.
  * 0.1.6 - Addressed crash when identify called on lights.
@@ -105,3 +113,5 @@ Examples:
  * 0.1.3 - Added improved debug output. Fixed bug where plugin would crash when there are no garage door opener present.
  * 0.1.2 - Added garage door opener support
  * Previous - Changes not tracked in this document.
+
+ Fork of original homebridge-isy-js by [rodtoll](https://github.com/rodtoll/homebridge-isy-js.git)
